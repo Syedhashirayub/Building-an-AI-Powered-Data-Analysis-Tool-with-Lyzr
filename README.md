@@ -1,3 +1,4 @@
+OVERVIEW
 This Flask application serves as a data analysis tool, enabling users to upload CSV files for in-depth analysis. Utilizing the capabilities of the Lyzr SDK, it offers a convenient and efficient way to extract valuable insights from data. The application primarily focuses on generating detailed reports making it easier for users to understand complex data patterns and statistics.
 
 Key Features
