@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Report</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Font -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif; /* Updated font */
+            background-color: #f4f4f4; /* Updated background color */
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff; /* Light background for the container */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #334b65; /* Consistent color scheme */
+            font-family: 'Roboto', sans-serif; /* Consistent font */
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            font-weight: 700; /* Bold */
+            color: #2b2b2c; /* Dark color */
+            
+            
+        }
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 0.5em;
+            border-bottom: 2px solid #121213;
+            display: inline-block;
+        }
+        .report-section {
+            margin-bottom: 2px;
+            padding-bottom: 2px;
+            border-bottom: 1px solid #eee;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #e9eff1; /* Light blue background for list items */
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .description {
+            text-align: justify;
+            background-color: #e9eff1;
+            border-left: 4px solid #007bff; /* Colorful left border */
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Data Analysis Report</h1>
+        {% if report %}
+            {% if report.description %}
+            <div class="report-section">
+                <h2>Dataset Description</h2>
+                <div class="description">
+                    {{ report.description }}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if report.analysis %}
+            <div class="report-section">
+                <h2>Analysis Insights</h2>
+                <ul>
+                    {% for insight in report.analysis.split('- ') %}
+                        {% if insight|trim %}
+                            <li>{{ insight }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+            {% if report.queries %}
+            <div class="report-section">
+                <h2>AI-Generated Queries</h2>
+                <ul>
+                    {% for query in report.queries.split('\n') %}
+                        {% if query|trim %}
+                            <li>{{ query }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+            {% if report.analysis_recommendation %}
+            <div class="report-section">
+                <h2>Analysis Recommendations</h2>
+                <ul>
+                    {% for recommendation in report.analysis_recommendation.split('\n') %}
+                        {% if recommendation|trim %}
+                            <li>{{ recommendation }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+            {# Visualization section if used #}
+
+        {% else %}
+            <p>No report data available.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

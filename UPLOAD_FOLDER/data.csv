@@ -1,0 +1,10 @@
+,price,mark,model,year,mileage,engine_capacity,transmission,drive,hand_drive,fuel
+0,80,nissan,march,2003,80000,1240,at,2wd,rhd,gasoline
+1,110,nissan,march,2010,53000,1200,at,2wd,rhd,gasoline
+2,165,nissan,lafesta,2005,47690,2000,at,2wd,rhd,gasoline
+3,190,toyota,avensis,2008,130661,1990,at,2wd,rhd,gasoline
+4,190,daihatsu,mira,2006,66300,660,at,2wd,rhd,gasoline
+5,190,daihatsu,mira,2004,81400,660,at,2wd,rhd,gasoline
+8,220,nissan,march,2010,117000,1200,at,2wd,rhd,gasoline
+9,230,volkswagen,passat,2008,127763,3190,at,4wd,rhd,gasoline
+10,275,mazda,bongo van,2010,178218,1800,mt,2wd,rhd,gasoline
